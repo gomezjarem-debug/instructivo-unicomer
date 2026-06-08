@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructivo SMART - Grupo Unicomer</title>
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Azul corporativo simulado */
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: #f4f6f9;
+            color: var(--text-color);
+        }
+
+        /* Menú Lateral */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background-color: #1e293b;
+            color: #fff;
+            position: fixed;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Contenido Principal */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 40px;
+            width: calc(100% - var(--sidebar-width));
+            max-width: 1000px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            scroll-margin-top: 40px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #1e293b;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #e2e8f0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* Alertas / Bloques de texto destacados */
+        .blockquote {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+        }
+
+        .badge-verde { background: #dcfce7; color: #14532d; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        .badge-amarillo { background: #fef9c3; color: #713f12; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        .badge-rojo { background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación Lateral -->
+    <nav class="sidebar">
+        <h2>Unicomer SMART</h2>
+        <a href="#control">1. Control Documental</a>
+        <a href="#objetivo">2. Objetivo SMART</a>
+        <a href="#roles">3. Ecosistema de Roles</a>
+        <a href="#pasos">4. Desglose Operativo</a>
+        <a href="#decisiones">5. Matriz de Decisión</a>
+        <a href="#trazabilidad">6. Trazabilidad y Cierre</a>
+    </nav>
+
+    <!-- Contenido del Instructivo -->
+    <main class="main-content">
+
+        <div id="control" class="card">
+            <h1>Instructivo SMART</h1>
+            <p><strong>Proceso:</strong> Evaluación, Aprobación y Activación de Crédito Directo al Consumo</p>
+            <p><strong>Grupo Unicomer</strong> | Versión 1.0 (Documento Interno Controlado)</p>
+            <hr style="margin-top: 15px; border: 0; border-top: 1px solid #e2e8f0;">
+            <h3>1. Control Documental</h3>
+            <p>Este documento interactivo sirve como la guía oficial estándar para el personal de tiendas y canales digitales encargados de la gestión de créditos.</p>
+        </div>
+
+        <div id="objetivo" class="card">
+            <h3>2. Objetivo SMART</h3>
+            <p>Garantizar que el 100% de las solicitudes de crédito directo en tienda sean procesadas en un tiempo máximo de <strong>20 minutos (SLA)</strong>, manteniendo un índice de error del 0% en la carga del expediente digital durante el año en curso.</p>
+        </div>
+
+        <div id="roles" class="card">
+            <h3>3. Ecosistema de Roles</h3>
+            <p>Para la correcta ejecución de este instructivo, se identifican los siguientes actores clave:</p>
+            <ul>
+                <li><strong>Asesor de Crédito:</strong> Responsable de la atención, captura de datos y validación de documentos.</li>
+                <li><strong>Cliente:</strong> Titular que provee la información y firma los contratos.</li>
+                <li><strong>Jefe de Tienda:</strong> Supervisor encargado de autorizar excepciones aprobadas por la política comercial.</li>
+            </ul>
+        </div>
+
+        <div id="pasos" class="card">
+            <h3>4. Desglose Operativo Paso a Paso</h3>
+            <p><strong>Paso 1: Recepción y Perfilamiento:</strong> Solicitar el documento de identidad original. Validar que la foto coincida plenamente con el portador.</p>
+            
+            <div class="blockquote">
+                "Bienvenido a Grupo Unicomer. Con gusto le ayudamos con su solicitud de crédito. ¿Me permite su documento de identidad para verificar sus planes de financiamiento inmediato?"
+            </div>
+
+            <p><strong>Paso 2: Consulta en Sistema Core:</strong> Digitar el número de identificación en la plataforma web de créditos de la empresa y actualizar los campos de celular y correo electrónico.</p>
+            <p><strong>Paso 3: Digitalización:</strong> Escanear y cargar los soportes (Cédula y comprobante de ingresos) en formato PDF de alta resolución.</p>
+        </div>
+
+        <div id="decisiones" class="card">
+            <h3>5. Matriz de Decisiones (Criterios de Aceptación)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Estado del Sistema</th>
+                        <th>Significado</th>
+                        <th>Acción Requerida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-verde">Aprobado</span></td>
+                        <td>Riesgo bajo aceptable</td>
+                        <td>Proceder inmediatamente a la facturación y entrega del producto.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-amarillo">Condicionado</span></td>
+                        <td>Requiere validación adicional</td>
+                        <td>Solicitar un co-deudor (garante) o ajustar el porcentaje de la cuota inicial.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-rojo">Rechazado</span></td>
+                        <td>Fuera de políticas de riesgo</td>
+                        <td>Agradecer al cliente e invitarlo a aplicar con métodos de pago de contado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="trazabilidad" class="card">
+            <h3>6. Bitácora de Trazabilidad y Cierre</h3>
+            <p>Cada consulta genera un sello de tiempo automático en nuestro sistema informático. Los líderes de tienda auditarán diariamente que los tiempos entre el Paso 1 y el cierre del contrato no superen los 20 minutos establecidos.</p>
+        </div>
+
+    </main>
+
+</body>
+</html>
