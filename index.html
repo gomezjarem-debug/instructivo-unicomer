@@ -6,21 +6,34 @@
     <title>Instructivo SMART - Grupo Unicomer</title>
     <style>
         :root {
-            --primary-blue: #0056b3;
-            --dark-slate: #1e293b;
-            --light-bg: #f8f9fa;
-            --text-color: #333333;
+            --unicomer-blue: #0b5ca8;
+            --unicomer-gray: #7c868d;
+            --bg-gradient: radial-gradient(circle at 50% 50%, #f4f7fc 0%, #e2eaf4 100%);
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            
+            /* Colores pasteles estilo módulos del otro grupo */
+            --pastel-blue: #e0f2fe;
+            --pastel-blue-text: #0369a1;
+            --pastel-green: #dcfce7;
+            --pastel-green-text: #15803d;
+            --pastel-yellow: #fef9c3;
+            --pastel-yellow-text: #a16207;
+            --pastel-orange: #ffedd5;
+            --pastel-orange-text: #c2410c;
+            --pastel-purple: #f3e8ff;
+            --pastel-purple-text: #6b21a8;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: #0f172a;
+            background: var(--bg-gradient);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,241 +41,462 @@
             overflow: hidden;
         }
 
-        /* Contenedor de la Diapositiva (Estilo PowerPoint Fijo) */
+        /* Proporción Fija de Diapositiva Ejecutiva (Estilo PowerPoint 16:9) */
         .slide-container {
-            width: 100%;
-            max-width: 1100px;
-            height: 650px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            width: 1280px;
+            height: 720px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(11, 92, 168, 0.25);
             position: relative;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            border: 1px solid #cbd5e1;
         }
 
-        /* Encabezado Fijo de la Diapositiva */
+        /* Encabezado Fijo */
         .slide-header {
-            background-color: var(--dark-slate);
-            color: #ffffff;
-            padding: 20px 40px;
+            padding: 25px 60px 15px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--primary-blue);
         }
 
         .slide-header h2 {
             font-size: 1.4rem;
-            font-weight: 600;
+            color: var(--unicomer-blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .slide-header .brand {
+        .slide-header .tag-version {
+            background-color: #f1f5f9;
+            color: var(--unicomer-gray);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: bold;
-            letter-spacing: 1px;
-            color: #38bdf8;
         }
 
         /* Cuerpo de la Diapositiva */
         .slide-body {
             flex: 1;
-            padding: 40px 60px;
+            padding: 20px 60px 40px 60px;
             overflow-y: auto;
-            display: none; /* Se ocultan por defecto */
+            display: none;
         }
 
         .slide-body.active {
-            display: block; /* Solo se muestra la activa */
-            animation: fadeIn 0.4s ease-in-out;
+            display: block;
+            animation: slideTransition 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        @keyframes slideTransition {
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Estilos de Contenido Interno */
-        h1 { color: var(--primary-blue); margin-bottom: 15px; font-size: 2.2rem; }
-        h3 { color: var(--dark-slate); margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
-        p { color: var(--text-color); line-height: 1.6; margin-bottom: 15px; font-size: 1.1rem; }
-        ul { margin-left: 25px; margin-bottom: 20px; }
-        li { margin-bottom: 10px; font-size: 1.1rem; color: var(--text-color); }
+        /* Títulos de Diapositiva */
+        h1 { color: var(--unicomer-blue); font-size: 3.2rem; margin-bottom: 20px; font-weight: 900; line-height: 1.1; }
+        h3 { color: var(--unicomer-blue); margin-bottom: 25px; font-size: 2rem; font-weight: 800; }
+        p { color: var(--text-dark); line-height: 1.6; margin-bottom: 15px; font-size: 1.15rem; }
 
-        /* Matriz de Decisiones */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+        /* Estructura de Módulos En Colores Pasteles */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 15px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 15px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px; }
+
+        .pastel-box {
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
         }
-        th, td { padding: 12px 15px; border: 1px solid #cbd5e1; text-align: left; }
-        th { background-color: #f1f5f9; color: var(--dark-slate); font-weight: bold; }
+        .pastel-box:hover { transform: translateY(-3px); }
+        .pastel-box h4 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 700; }
+        .pastel-box p { font-size: 1.05rem; margin-bottom: 0; }
+        .pastel-box ul { margin-left: 20px; margin-top: 10px; }
+        .pastel-box li { margin-bottom: 8px; font-size: 1rem; }
+
+        /* Variaciones de colores pasteles */
+        .p-blue { background-color: var(--pastel-blue); color: var(--pastel-blue-text); }
+        .p-blue h4, .p-blue li::marker { color: #0284c7; }
+        .p-green { background-color: var(--pastel-green); color: var(--pastel-green-text); }
+        .p-green h4, .p-green li::marker { color: #16a34a; }
+        .p-yellow { background-color: var(--pastel-yellow); color: var(--pastel-yellow-text); }
+        .p-yellow h4, .p-yellow li::marker { color: #ca8a04; }
+        .p-orange { background-color: var(--pastel-orange); color: var(--pastel-orange-text); }
+        .p-orange h4, .p-orange li::marker { color: #ea580c; }
+        .p-purple { background-color: var(--pastel-purple); color: var(--pastel-purple-text); }
+        .p-purple h4, .p-purple li::marker { color: #9333ea; }
+
+        /* Línea de Tiempo de Pasos */
+        .timeline-container { display: flex; justify-content: space-between; margin-top: 50px; position: relative; padding: 0 20px; }
+        .timeline-container::before {
+            content: ''; position: absolute; top: 30px; left: 50px; width: calc(100% - 100px); height: 6px; background-color: #cbd5e1; z-index: 1;
+        }
+        .timeline-card { position: relative; z-index: 2; text-align: center; width: 22%; }
+        .timeline-circle {
+            width: 65px; height: 65px; border-radius: 50%; background: var(--unicomer-blue); color: white;
+            display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 1.5rem;
+            margin: 0 auto 20px auto; box-shadow: 0 10px 15px -3px rgba(11, 92, 168, 0.3);
+        }
+        .timeline-card h4 { font-size: 1.15rem; color: var(--unicomer-blue); margin-bottom: 8px; font-weight: 700; }
+        .timeline-card p { font-size: 0.95rem; color: var(--text-dark); }
+
+        /* Tablas */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        th, td { padding: 15px 20px; text-align: left; font-size: 1.05rem; }
+        th { background-color: var(--unicomer-blue); color: white; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.5px; }
+        tr { border-bottom: 1px solid #e2e8f0; }
+        tr:last-child { border-bottom: none; }
         
-        .badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; }
-        .badge-verde { background: #dcfce7; color: #14532d; }
-        .badge-amarillo { background: #fef9c3; color: #713f12; }
-        .badge-rojo { background: #fee2e2; color: #991b1b; }
+        .badge { padding: 6px 14px; border-radius: 30px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; display: inline-block; }
+        .bg-v { background: #dcfce7; color: #14532d; }
+        .bg-a { background: #fef9c3; color: #713f12; }
+        .bg-r { background: #fee2e2; color: #991b1b; }
 
-        .highlight-box {
-            background-color: #eff6ff;
-            border-left: 5px solid var(--primary-blue);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-            font-style: italic;
+        /* Caja de Script de llamadas/atención */
+        .script-quote {
+            background: #f0f7ff; border-left: 6px solid var(--unicomer-blue); padding: 25px;
+            border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; font-size: 1.2rem; color: #0369a1;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
         }
 
-        /* Barra de Navegación Inferior (Controles) */
+        /* Barra de Navegación del Pie de Página Fijo */
         .slide-footer {
-            background-color: #f8f9fa;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #e2e8f0;
+            background-color: white; padding: 15px 60px; display: flex;
+            justify-content: space-between; align-items: center; border-top: 2px solid #e2e8f0;
         }
-
+        .footer-logo img { height: 45px; object-fit: contain; }
+        .footer-controls { display: flex; align-items: center; gap: 30px; }
         .nav-btn {
-            background-color: var(--dark-slate);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.2s;
+            background-color: var(--unicomer-blue); color: white; border: none;
+            padding: 12px 28px; border-radius: 8px; cursor: pointer; font-weight: 700;
+            font-size: 1rem; transition: all 0.2s; box-shadow: 0 4px 12px rgba(11, 92, 168, 0.2);
         }
-
-        .nav-btn:hover { background-color: var(--primary-blue); }
-        .nav-btn:disabled { background-color: #cbd5e1; cursor: not-allowed; color: #94a3b8; }
-
-        .slide-counter { font-weight: 600; color: #64748b; font-size: 1rem; }
+        .nav-btn:hover { background-color: #08447e; transform: translateY(-1px); }
+        .nav-btn:disabled { background-color: #cbd5e1; cursor: not-allowed; color: #94a3b8; box-shadow: none; transform: none; }
+        .slide-counter { font-weight: 800; color: var(--unicomer-gray); font-size: 1.05rem; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
 
     <div class="slide-container">
-        <!-- Encabezado Estándar Unicomer -->
+        <!-- Encabezado Común -->
         <header class="slide-header">
-            <h2>INSTRUCTIVO SMART: Proceso de Crédito Directo</h2>
-            <div class="brand">GRUPO UNICOMER</div>
+            <h2>Instructivo SMART Operativo</h2>
+            <div class="tag-version">Módulo de Capacitación V1.2</div>
         </header>
 
-        <!-- Diapositiva 1: Portada -->
-        <div class="slide-body active">
-            <p style="text-transform: uppercase; letter-spacing: 1px; color: var(--primary-blue); font-weight: bold; margin-bottom: 5px;">Procedimiento Operativo Estándar</p>
-            <h1>Evaluación y Activación de Crédito Directo al Consumo</h1>
-            <p>Guía de autoaprendizaje interactiva para asesores de venta en agencias y canales digitales.</p>
-            <div class="highlight-box" style="margin-top: 40px;">
-                <strong>Marcas Aplicables:</strong> La Curacao, Almacenes Tropigas, Gollo, Artefacta y plataformas CrediUnicomer / EMMA.
-            </div>
-            <p style="font-size: 0.9rem; color: #64748b; margin-top: 40px;">Versión 1.0 | Documento Interno Controlado</p>
-        </div>
-
-        <!-- Diapositiva 2: Objetivo SMART -->
-        <div class="slide-body">
-            <h3>1. ¿Qué hace este Instructivo? (Objetivo SMART)</h3>
-            <p>El propósito de esta herramienta es estandarizar la gestión de financiamiento en las salas de venta de Grupo Unicomer para alcanzar las siguientes metas específicas:</p>
-            <ul>
-                <li><strong>Específico (S):</strong> Guiar paso a paso al asesor en la prospección, análisis y firma del crédito.</li>
-                <li><strong>Medible (M):</strong> Reducir el tiempo de respuesta de cara al cliente (SLA operativo).</li>
-                <li><strong>Alcanzable (A):</strong> Monitorear que el proceso tome <strong>menos de 20 minutos</strong> por cliente.</li>
-                <li><strong>Relevante (R):</strong> Asegurar un 0% de errores o rechazos de expedientes en las auditorías de cartera.</li>
-                <li><strong>Tiempo (T):</strong> Cumplir de forma consistente con este indicador durante todo el año fiscal vigente.</li>
-            </ul>
-        </div>
-
-        <!-- Diapositiva 3: Ecosistema de Roles -->
-        <div class="slide-body">
-            <h3>2. Ecosistema de Roles Corporativos</h3>
-            <p>Para lograr la agilidad comercial requerida por Grupo Unicomer, intervienen los siguientes actores organizacionales:</p>
-            <ul>
-                <li><strong>Asesor de Crédito / Ventas:</strong> Ejecutor principal. Atiende al usuario, digita la información en la plataforma y escanea los documentos físicos de soporte.</li>
-                <li><strong>Cliente Solicitante:</strong> Provee sus datos personales, laborales y residenciales con total veracidad.</li>
-                <li><strong>Mesa de Control / Riesgo Centralizado:</strong> Instancia remota encargada de evaluar de forma automática (o manual por excepción) el nivel de riesgo crediticio.</li>
-                <li><strong>Gerente / Jefe de Tienda:</strong> Responsable de validar condiciones comerciales especiales o primas requeridas.</li>
-            </ul>
-        </div>
-
-        <!-- Diapositiva 4: Paso 1 y 2 -->
-        <div class="slide-body">
-            <h3>3. Desglose Operativo: Pasos Iniciales</h3>
-            <p><strong>Paso 1: Recepción y Filtro de Identidad</strong><br>Solicite al cliente su documento de identidad original y vigente. Verifique visualmente que la fotografía coincida plenamente con el solicitante para prevenir fraudes por suplantación.</p>
+        <!-- DIAPOSITIVA 1: PORTADA -->
+        <div class="slide-body active" style="background: linear-gradient(135deg, #f8fafc 0%, #e2eefc 100%); padding-top: 60px;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--unicomer-gray); font-weight: 800; font-size: 1rem; margin-bottom: 15px;">Ecosistema de Formación Interna</p>
+            <h1 style="font-size: 3.8rem; color: var(--unicomer-blue);">Evaluación y Gestión de Crédito Directo en Tiendas</h1>
+            <p style="font-size: 1.4rem; color: #334155; max-width: 900px; margin-bottom: 50px;">Guía interactiva para la unificación de criterios operativos, mitigar riesgos y acelerar el tiempo de respuesta al cliente.</p>
             
-            <div class="highlight-box">
-                <strong>Script de Servicio Obligatorio:</strong><br>
-                "Bienvenido a Grupo Unicomer. Con gusto le ayudamos con su solicitud de crédito para su artículo. Me permite su identificación para verificar de inmediato el cupo de financiamiento que tenemos aprobado para usted hoy."
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">La Curacao</span>
+                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Almacenes Tropigas</span>
+                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Gollo</span>
+                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Artefacta</span>
+                <span class="badge" style="background: #dbeafe; color: #1e40af; padding: 10px 20px; font-size: 0.9rem;">CrediUnicomer / EMMA App</span>
             </div>
-
-            <p><strong>Paso 2: Digitación en el Core de Crédito</strong><br>Ingrese el número de cédula/identificación en el sistema transaccional de Unicomer. Es obligatorio actualizar el número de teléfono celular y el correo electrónico del cliente para el envío del contrato digital.</p>
         </div>
 
-        <!-- Diapositiva 5: Paso 3 y Carga de Soportes -->
+        <!-- DIAPOSITIVA 2: INTRODUCCIÓN Y DIAGNÓSTICO -->
         <div class="slide-body">
-            <h3>4. Desglose Operativo: Carga de Expediente</h3>
-            <p><strong>Paso 3: Digitalización e Indexación de Soportes</strong><br>Una vez que el sistema confirma la viabilidad del perfil, se deben escanear y cargar en la plataforma de Crédito Digital los siguientes soportes legibles:</p>
-            <ul>
-                <li><strong>Identificación Oficial:</strong> Escaneada por ambos lados, completamente nítida y sin reflejos de luz.</li>
-                <li><strong>Sustento de Ingresos:</strong> Roles de pago, estados de cuenta o constancias de trabajo según el perfil (asalariado o independiente).</li>
-                <li><strong>Comprobante de Domicilio:</strong> Recibo de servicio básico (agua, luz o teléfono) con una antigüedad no mayor a 90 días.</li>
-            </ul>
-            <p><em>Nota: No se permiten capturas de pantalla de baja calidad ni documentos cortados.</em></p>
+            <h3>01. Introducción y Contexto del Negocio</h3>
+            <p>En el sector de Retail y Servicios Financieros de Grupo Unicomer, el otorgamiento de líneas de crédito directo representa el motor comercial principal en salas de venta.</p>
+            <p>Este instructivo responde a la necesidad de equilibrar dos variables críticas de la operación:</p>
+            
+            <div class="grid-2">
+                <div class="pastel-box p-blue">
+                    <h4>⚡ Agilidad Comercial</h4>
+                    <p>El cliente en piso demanda respuestas rápidas. Un proceso burocrático o lento genera deserción y pérdida de ventas frente a la competencia.</p>
+                </div>
+                <div class="pastel-box p-orange">
+                    <h4>🛡️ Control de Riesgo y Cartera</h4>
+                    <p>La incorrecta captura de datos o validación de documentos genera un incremento directo en la cartera vencida y fraudes por suplantación.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Diapositiva 6: Matriz de Decisiones -->
+        <!-- DIAPOSITIVA 3: OBJETIVOS SMART (MÓDULOS COLORES) -->
         <div class="slide-body">
-            <h3>5. Matriz de Decisiones (Criterios de Riesgo)</h3>
-            <p>Dependiendo del dictamen automático arrojado por el motor de riesgos de Unicomer, ejecute las siguientes acciones:</p>
+            <h3>02. Alineación de Objetivos SMART</h3>
+            <p>Cada acción operativa contenida en este manual está diseñada bajo la metodología SMART con métricas rigurosas:</p>
+            
+            <div class="grid-3">
+                <div class="pastel-box p-blue">
+                    <h4>S - Específico</h4>
+                    <p>Estandarizar el ingreso de solicitudes en el core transaccional reduciendo reprocesos manuales.</p>
+                </div>
+                <div class="pastel-box p-green">
+                    <h4>M - Medible</h4>
+                    <p>Mantener el SLA de atención en tienda por debajo de los <strong>20 minutos</strong> globales.</p>
+                </div>
+                <div class="pastel-box p-yellow">
+                    <h4>A - Alcanzable</h4>
+                    <p>Soportado mediante motores de riesgo automáticos de última generación.</p>
+                </div>
+            </div>
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="pastel-box p-orange">
+                    <h4>R - Relevante</h4>
+                    <p>Garantizar un <strong>0% de errores de indexación</strong> en auditorías mensuales de control de expedientes.</p>
+                </div>
+                <div class="pastel-box p-purple">
+                    <h4>T - Tiempo</h4>
+                    <p>Indicadores evaluados diariamente y consolidados al cierre de cada mes fiscal.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 4: ECOSISTEMA DE ROLES (MÓDULOS COLORES) -->
+        <div class="slide-body">
+            <h3>03. Ecosistema de Roles y Responsabilidades</h3>
+            <p>El éxito del indicador SMART depende de la sinergia y cumplimiento de tareas por cada actor:</p>
+            
+            <div class="grid-2">
+                <div class="pastel-box p-blue">
+                    <h4>👨‍💼 Asesor de Ventas / Crédito (Ejecutor)</h4>
+                    <ul>
+                        <li>Recibir al cliente y perfilar sus necesidades financieras.</li>
+                        <li>Garantizar la nitidez de los documentos escaneados.</li>
+                        <li>Digitar la información sin errores ortográficos ni de numeración.</li>
+                    </ul>
+                </div>
+                <div class="pastel-box p-purple">
+                    <h4>💻 Mesa de Control Centralizada (Validadores)</h4>
+                    <ul>
+                        <li>Auditar en tiempo real las solicitudes derivadas por inconsistencias.</li>
+                        <li>Verificar autenticidad de firmas en casos excepcionales complejos.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="pastel-box p-yellow">
+                    <h4>🏪 Gerente / Jefe de Tienda (Supervisor)</h4>
+                    <ul>
+                        <li>Autorizar excepciones de primas o plazos autorizados comercialmente.</li>
+                        <li>Monitorear que el equipo cumpla con los SLAs diarios de atención.</li>
+                    </ul>
+                </div>
+                <div class="pastel-box p-green">
+                    <h4>🙋‍♂️ Cliente Final (Beneficiario)</h4>
+                    <ul>
+                        <li>Proveer información fidedigna, residencial y laboral verificable.</li>
+                        <li>Completar la validación biométrica en el punto de atención.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 5: MAPA GENERAL DEL FLUJO MACRO -->
+        <div class="slide-body">
+            <h3>04. Mapa del Flujo de Trabajo en Tienda</h3>
+            <p>El proceso consta de 4 etapas críticas consecutivas. El retraso o fallo en una de ellas detiene la solicitud completa:</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-card">
+                    <div class="timeline-circle">1</div>
+                    <h4>Identidad y Filtro</h4>
+                    <p>Validación del cliente y perfilamiento biométrico en sala.</p>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-circle">2</div>
+                    <h4>Digitación Core</h4>
+                    <p>Ingreso de datos demográficos en el sistema Unicomer.</p>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-circle">3</div>
+                    <h4>Carga Digital</h4>
+                    <p>Indexación de documentos de soporte en formato PDF.</p>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-circle">4</div>
+                    <h4>Firma y Cierre</h4>
+                    <p>Formalización digital y despacho del producto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 6: PASO 1 - DETALLE Y VALIDACIÓN BIOMÉTRICA -->
+        <div class="slide-body">
+            <h3>05. Paso 1: Recepción, Filtro y Validación Biométrica</h3>
+            <p>La seguridad de la cartera inicia en el primer contacto. Debe mitigar riesgos de fraude de identidad de manera presencial.</p>
+            
+            <div class="grid-2">
+                <div>
+                    <p><strong>Acciones Obligatorias del Asesor:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li style="margin-bottom: 10px;">Solicite el documento de identidad original y vigente (No se aceptan fotocopias).</li>
+                        <li style="margin-bottom: 10px;">Inspeccione físicamente que la tarjeta de identidad no tenga enmendaduras, plásticos despegados o alteraciones.</li>
+                        <li style="margin-bottom: 10px;">Proceda a activar la cámara del punto de venta para la **validación biométrica facial** integrada en el sistema.</li>
+                    </ul>
+                </div>
+                <div class="pastel-box p-blue">
+                    <h4>🗣️ Script de Atención Estándar</h4>
+                    <p class="script-quote" style="margin: 10px 0; padding: 15px; font-size: 1.1rem;">
+                        "Bienvenido a Grupo Unicomer. Con gusto daremos de alta su solicitud para verificar sus beneficios y planes de financiamiento inmediato. ¿Me permite su identificación oficial para realizar el escaneo de seguridad?"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 7: PASO 2 - DIGITACIÓN Y ACTUALIZACIÓN CORE -->
+        <div class="slide-body">
+            <h3>06. Paso 2: Digitación en el Core de Crédito</h3>
+            <p>El ingreso erróneo de caracteres duplica los tiempos en mesa de control. El asesor debe ser meticuloso en este paso.</p>
+            
+            <div class="grid-3">
+                <div class="pastel-box p-yellow">
+                    <h4>📱 Datos de Comunicación</h4>
+                    <p>El número celular y el correo electrónico del cliente deben ser validados en vivo mediante el envío de un código SMS de verificación OTP.</p>
+                </div>
+                <div class="pastel-box p-blue">
+                    <h4>💼 Información Laboral</h4>
+                    <p>Digitar el nombre legal de la empresa, teléfonos fijos de contacto de recursos humanos y el salario neto real percibido por el solicitante.</p>
+                </div>
+                <div class="pastel-box p-purple">
+                    <h4>🏠 Georreferenciación</h4>
+                    <p>Ingresar la dirección exacta detallando calles principales, secundarias, color de casa y puntos de referencia cercanos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 8: PASO 3 - ESTÁNDAR DE CARGA DOCUMENTAL -->
+        <div class="slide-body">
+            <h3>07. Paso 3: Estándar y Calidad del Expediente Digital</h3>
+            <p>Los archivos corruptos, oscuros o cortados causan el rechazo automático del expediente. Aplique los siguientes estándares de carga:</p>
+            
+            <div class="grid-3">
+                <div class="pastel-box p-green">
+                    <h4>🪪 Documento de Identidad</h4>
+                    <p>Escaneado a color por ambos lados. Los bordes del documento deben ser visibles y la firma debe ser completamente legible.</p>
+                </div>
+                <div class="pastel-box p-blue">
+                    <h4>💵 Comprobante de Ingreso</h4>
+                    <p>Roles de pago firmados del último mes o estados de cuenta bancarios nítidos (últimos 3 meses para independientes).</p>
+                </div>
+                <div class="pastel-box p-orange">
+                    <h4>⚡ Planilla de Servicios</h4>
+                    <p>Documento completo de luz, agua o teléfono. El campo de la dirección debe coincidir con la información ingresada en el sistema.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 9: MATRIZ DE DECISIONES DE RIESGO -->
+        <div class="slide-body">
+            <h3>08. Matriz de Decisiones del Motor de Crédito</h3>
+            <p>Al procesar la solicitud, el Motor de Reglas de Unicomer arrojará una respuesta inmediata basada en políticas de scoring:</p>
+            
             <table>
                 <thead>
                     <tr>
-                        <th>Dictamen del Sistema</th>
-                        <th>Estado Comercial</th>
-                        <th>Acción Operativa Requerida</th>
+                        <th>Estado en Pantalla</th>
+                        <th>Nivel de Riesgo</th>
+                        <th>Acción Operativa Inmediata</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="badge badge-verde">Aprobado Directo</span></td>
-                        <td>Riesgo Óptimo</td>
-                        <td>Proceder inmediatamente a la impresión del plan de pagos, facturación y despacho del bien.</td>
+                        <td><span class="badge bg-v">Verde - Aprobado</span></td>
+                        <td>Riesgo Bajo / Óptimo</td>
+                        <td>Proceder directamente a la emisión del contrato financiero y la orden de facturación.</td>
                     </tr>
                     <tr>
-                        <td><span class="badge badge-amarillo">Condicionado</span></td>
+                        <td><span class="badge bg-a">Amarillo - Condicionado</span></td>
                         <td>Riesgo Moderado</td>
-                        <td>Solicitar la firma de un co-deudor (garante) estable o requerir un porcentaje inicial de prima (cuota inicial).</td>
+                        <td>El sistema solicitará el ingreso de un co-deudor (garante) o el incremento del porcentaje de cuota inicial (prima).</td>
                     </tr>
                     <tr>
-                        <td><span class="badge badge-rojo">Rechazado</span></td>
+                        <td><span class="badge bg-r">Rojo - Rechazado</span></td>
                         <td>Riesgo No Admisible</td>
-                        <td>Agradecer amablemente al cliente por su interés y ofrecer alternativas de pago mediante tarjetas o contado.</td>
+                        <td>Finalizar la atención amablemente. Ofrecer planes de compra mediante tarjetas de crédito aliadas o pago de contado.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Diapositiva 7: Cierre y Trazabilidad -->
+        <!-- DIAPOSITIVA 10: PASO 4 - LEGALIZACIÓN Y FIRMA DIGITAL -->
         <div class="slide-body">
-            <h3>6. Cierre del Proceso y Trazabilidad SMART</h3>
-            <p><strong>Paso 4: Firma del Contrato y Entrega</strong><br>Genere el pagaré y el contrato de crédito mediante la tableta de firma digital. Explique detalladamente el valor de la cuota mensual, las fechas límites de pago y recuerde el uso de los canales de recaudación oficiales de la empresa.</p>
+            <h3>09. Paso 4: Firma del Contrato y Cierre Comercial</h3>
+            <p>Una vez aprobado el crédito, el proceso concluye con la formalización legal de los documentos valorados:</p>
             
-            <p><strong>Control de Trazabilidad Comercial:</strong><br>Todo el flujo de atención genera una marca de tiempo automática (Huella Digital) auditable por la gerencia de operaciones:</p>
-            <ul>
-                <li><strong>Hito de Inicio:</strong> Registro del documento del cliente en el sistema.</li>
-                <li><strong>Hito de Evaluación:</strong> Emisión del dictamen por el motor de crédito (SLA esperado: &lt; 3 minutos).</li>
-                <li><strong>Hito de Cierre:</strong> Emisión de la factura y activación formal de la cuenta de crédito.</li>
-            </ul>
+            <div class="grid-2">
+                <div class="pastel-box p-purple">
+                    <h4>✍️ Firma Digital y Biométrica</h4>
+                    <p>Se despliega el pagaré y el contrato de crédito en la tableta electrónica. El cliente debe estampar su firma física idéntica a la de su documento oficial.</p>
+                </div>
+                <div class="pastel-box p-green">
+                    <h4>📣 Explicación de Condiciones</h4>
+                    <p>Es una obligación de servicio repetirle verbalmente al cliente el valor de su cuota mensual fija, el día de pago del mes y recordarle las marcas aliadas del grupo y la app **EMMA** para la autogestión de sus saldos.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Barra de Controles Inferiores -->
+        <!-- DIAPOSITIVA 11: TRAZABILIDAD Y CONTROL DE AUDITORÍA -->
+        <div class="slide-body">
+            <h3>10. Huella Digital y Control de Trazabilidad</h3>
+            <p>Toda acción efectuada por el asesor dentro del software deja una huella digital inalterable con marcas de tiempo (Timestamps):</p>
+            
+            <div class="grid-3">
+                <div class="pastel-box p-blue">
+                    <h4>🕒 Registro Inicial</h4>
+                    <p>Marca la hora exacta en que el asesor digita la cédula del cliente. Inicia el conteo oficial de los 20 minutos de SLA.</p>
+                </div>
+                <div class="pastel-box p-yellow">
+                    <h4>🕒 Tiempo de Scoring</h4>
+                    <p>Mide los minutos que toma el motor de riesgos en emitir su veredicto (Meta estándar interna: menos de 3 minutos).</p>
+                </div>
+                <div class="pastel-box p-orange">
+                    <h4>🕒 Cierre y Activación</h4>
+                    <p>Registra la generación de la factura y activación de la cuenta corriente de crédito del cliente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIAPOSITIVA 12: MEJORA CONTINUA Y EVALUACIÓN -->
+        <div class="slide-body">
+            <h3>11. Mejora Continua y Actualizaciones</h3>
+            <p>Este instructivo SMART constituye un documento de carácter vivo dentro del Sistema de Gestión de Calidad de Grupo Unicomer.</p>
+            <p>Cualquier modificación futura en los siguientes parámetros exigirá la actualización inmediata de estas diapositivas interactivas:</p>
+            
+            <div class="grid-3">
+                <div class="pastel-box p-blue">
+                    <h4>⚖️ Ajustes Legales</h4>
+                    <p>Cambios en las normativas y leyes financieras de regulación de crédito al consumidor locales.</p>
+                </div>
+                <div class="pastel-box p-purple">
+                    <h4>🛠️ Actualización de Software</h4>
+                    <p>Lanzamientos de nuevas versiones del sistema Core o la plataforma móvil fintech de la empresa.</p>
+                </div>
+                <div class="pastel-box p-green">
+                    <h4>📈 Objetivos de Cartera</h4>
+                    <p>Reajuste de las políticas internas de flexibilización o restricción de riesgo crediticio semestral.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de Página Fijo -->
         <footer class="slide-footer">
-            <button class="nav-btn" id="prevBtn" disabled>Anterior</button>
-            <div class="slide-counter" id="slideNum">Diapositiva 1 de 7</div>
-            <button class="nav-btn" id="nextBtn">Siguiente</button>
+            <div class="footer-logo">
+                <!-- Se enlaza la imagen provista directamente por el repositorio -->
+                <img src="https://gomezjarem-debug.github.io/instructivo-unicomer/image_989069.png" alt="Logo Grupo Unicomer" onerror="this.src='image_989069.png'">
+            </div>
+            <div class="footer-controls">
+                <button class="nav-btn" id="prevBtn" disabled>Anterior</button>
+                <div class="slide-counter" id="slideNum">Diapositiva 1 de 12</div>
+                <button class="nav-btn" id="nextBtn">Siguiente</button>
+            </div>
         </footer>
     </div>
 
-    <!-- Script de Control de las Diapositivas -->
+    <!-- Script Controlador de Diapositivas -->
     <script>
         const slides = document.querySelectorAll('.slide-body');
         const prevBtn = document.getElementById('prevBtn');
@@ -279,10 +513,7 @@
                 }
             });
 
-            // Actualizar contador
             slideNum.textContent = `Diapositiva ${currentSlide + 1} de ${slides.length}`;
-
-            // Control de estado de botones
             prevBtn.disabled = currentSlide === 0;
             nextBtn.disabled = currentSlide === slides.length - 1;
         }
@@ -301,7 +532,7 @@
             }
         });
 
-        // Soporte para avanzar/retroceder con las flechas del teclado
+        // Controles de Flechas de Teclado (Izquierda / Derecha)
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
                 currentSlide++;
