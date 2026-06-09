@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructivo SMART - Grupo Unicomer</title>
+    <title>Instructivo SMART - Ventas Institucionales</title>
     <style>
         :root {
             --unicomer-blue: #0b5ca8;
@@ -12,7 +12,7 @@
             --card-bg: #ffffff;
             --text-dark: #1e293b;
             
-            /* Colores pasteles estilo módulos del otro grupo */
+            /* Colores pasteles normativos para módulos */
             --pastel-blue: #e0f2fe;
             --pastel-blue-text: #0369a1;
             --pastel-green: #dcfce7;
@@ -106,7 +106,6 @@
         /* Estructura de Módulos En Colores Pasteles */
         .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 15px; }
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 15px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px; }
 
         .pastel-box {
             padding: 25px;
@@ -158,13 +157,6 @@
         .bg-a { background: #fef9c3; color: #713f12; }
         .bg-r { background: #fee2e2; color: #991b1b; }
 
-        /* Caja de Script de llamadas/atención */
-        .script-quote {
-            background: #f0f7ff; border-left: 6px solid var(--unicomer-blue); padding: 25px;
-            border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; font-size: 1.2rem; color: #0369a1;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-        }
-
         /* Barra de Navegación del Pie de Página Fijo */
         .slide-footer {
             background-color: white; padding: 15px 60px; display: flex;
@@ -185,318 +177,228 @@
 <body>
 
     <div class="slide-container">
-        <!-- Encabezado Común -->
         <header class="slide-header">
             <h2>Instructivo SMART Operativo</h2>
-            <div class="tag-version">Módulo de Capacitación V1.2</div>
+            <div class="tag-version">Código: SM.CA - PR.12.02</div>
         </header>
 
-        <!-- DIAPOSITIVA 1: PORTADA -->
         <div class="slide-body active" style="background: linear-gradient(135deg, #f8fafc 0%, #e2eefc 100%); padding-top: 60px;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--unicomer-gray); font-weight: 800; font-size: 1rem; margin-bottom: 15px;">Ecosistema de Formación Interna</p>
-            <h1 style="font-size: 3.8rem; color: var(--unicomer-blue);">Evaluación y Gestión de Crédito Directo en Tiendas</h1>
-            <p style="font-size: 1.4rem; color: #334155; max-width: 900px; margin-bottom: 50px;">Guía interactiva para la unificación de criterios operativos, mitigar riesgos y acelerar el tiempo de respuesta al cliente.</p>
+            <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--unicomer-gray); font-weight: 800; font-size: 1rem; margin-bottom: 15px;">Manual de Procedimiento Interno</p>
+            <h1 style="font-size: 3.8rem; color: var(--unicomer-blue);">Procedimiento Operativo: Generar Ventas Institucionales</h1>
+            <p style="font-size: 1.4rem; color: #334155; max-width: 900px; margin-bottom: 50px;">Estandarización del flujo transaccional en el sistema SIAR, gestión de cotizaciones, órdenes de compra y armado de expedientes legales.</p>
             
             <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
-                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">La Curacao</span>
-                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Almacenes Tropigas</span>
-                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Gollo</span>
-                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Artefacta</span>
-                <span class="badge" style="background: #dbeafe; color: #1e40af; padding: 10px 20px; font-size: 0.9rem;">CrediUnicomer / EMMA App</span>
+                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Área: Ventas</span>
+                <span class="badge" style="background: white; color: var(--unicomer-blue); border: 1px solid #cbd5e1; padding: 10px 20px; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">Área: Crédito y Cobros</span>
+                <span class="badge" style="background: #dbeafe; color: #1e40af; padding: 10px 20px; font-size: 0.9rem;">Resultado: Factura Institucional Electrónica</span>
             </div>
         </div>
 
-        <!-- DIAPOSITIVA 2: INTRODUCCIÓN Y DIAGNÓSTINO -->
         <div class="slide-body">
-            <h3>01. Introducción y Contexto del Negocio</h3>
-            <p>En el sector de Retail y Servicios Financieros de Grupo Unicomer, el otorgamiento de líneas de crédito directo representa el motor comercial principal en salas de venta.</p>
-            <p>Este instructivo responde a la necesidad de equilibrar dos variables críticas de la operación:</p>
+            <h3>01. Ficha Técnica de la Actividad</h3>
+            <p>La correcta ejecución de esta etapa asegura que la venta quede asociada al canal institucional correcto, protegiendo las metas mensuales de comercialización externa.</p>
             
             <div class="grid-2">
                 <div class="pastel-box p-blue">
-                    <h4>⚡ Agilidad Comercial</h4>
-                    <p>El cliente en piso demanda respuestas rápidas. Un proceso burocrático o lento genera deserción y pérdida de ventas frente a la competencia.</p>
-                </div>
-                <div class="pastel-box p-orange">
-                    <h4>🛡️ Control de Riesgo y Cartera</h4>
-                    <p>La incorrecta captura de datos o validación de documentos genera un incremento directo en la cartera vencida y fraudes por suplantación.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- DIAPOSITIVA 3: OBJETIVOS SMART (MÓDULOS COLORES) -->
-        <div class="slide-body">
-            <h3>02. Alineación de Objetivos SMART</h3>
-            <p>Cada acción operativa contenida en este manual está diseñada bajo la metodología SMART con métricas rigurosas:</p>
-            
-            <div class="grid-3">
-                <div class="pastel-box p-blue">
-                    <h4>S - Específico</h4>
-                    <p>Estandarizar el ingreso de solicitudes en el core transaccional reduciendo reprocesos manuales.</p>
-                </div>
-                <div class="pastel-box p-green">
-                    <h4>M - Medible</h4>
-                    <p>Mantener el SLA de atención en tienda por debajo de los <strong>20 minutos</strong> globales.</p>
-                </div>
-                <div class="pastel-box p-yellow">
-                    <h4>A - Alcanzable</h4>
-                    <p>Soportado mediante motores de riesgo automáticos de última generación.</p>
-                </div>
-            </div>
-            <div class="grid-2" style="margin-top: 20px;">
-                <div class="pastel-box p-orange">
-                    <h4>R - Relevante</h4>
-                    <p>Garantizar un <strong>0% de errores de indexación</strong> en auditorías mensuales de control de expedientes.</p>
-                </div>
-                <div class="pastel-box p-purple">
-                    <h4>T - Tiempo</h4>
-                    <p>Indicadores evaluados diariamente y consolidados al cierre de cada mes fiscal.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- DIAPOSITIVA 4: ECOSISTEMA DE ROLES (MÓDULOS COLORES) -->
-        <div class="slide-body">
-            <h3>03. Ecosistema de Roles y Responsabilidades</h3>
-            <p>El éxito del indicador SMART depende de la sinergia y cumplimiento de tareas por cada actor:</p>
-            
-            <div class="grid-2">
-                <div class="pastel-box p-blue">
-                    <h4>👨‍💼 Asesor de Ventas / Crédito (Ejecutor)</h4>
+                    <h4>📊 Características Básicas</h4>
                     <ul>
-                        <li>Recibir al cliente y perfilar sus necesidades financieras.</li>
-                        <li>Garantizar la nitidez de los documentos escaneados.</li>
-                        <li>Digitar la información sin errores ortográficos ni de numeración.</li>
-                    </ul>
-                </div>
-                <div class="pastel-box p-purple">
-                    <h4>💻 Mesa de Control Centralizada (Validadores)</h4>
-                    <ul>
-                        <li>Auditar en tiempo real las solicitudes derivadas por inconsistencias.</li>
-                        <li>Verificar autenticidad de firmas en casos excepcionales complejos.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid-2" style="margin-top: 20px;">
-                <div class="pastel-box p-yellow">
-                    <h4>🏪 Gerente / Jefe de Tienda (Supervisor)</h4>
-                    <ul>
-                        <li>Autorizar excepciones de primas o plazos autorizados comercialmente.</li>
-                        <li>Monitorear que el equipo cumpla con los SLAs diarios de atención.</li>
+                        <li><strong>Nombre Oficial:</strong> Generar ventas institucionales.</li>
+                        <li><strong>Desempeñada por:</strong> Empleado y Software en conjunto (Ambos).</li>
+                        <li><strong>Resultado Principal:</strong> Factura de venta institucional generada en el sistema.</li>
                     </ul>
                 </div>
                 <div class="pastel-box p-green">
-                    <h4>🙋‍♂️ Cliente Final (Beneficiario)</h4>
+                    <h4>🎯 Métrica de Control</h4>
                     <ul>
-                        <li>Proveer información fidedigna, residencial y laboral verificable.</li>
-                        <li>Completar la validación biométrica en el punto de atención.</li>
+                        <li><strong>Indicador de medición:</strong> Cumplimiento mensual de ventas institucionales.</li>
+                        <li><strong>Canal Obligatorio:</strong> Todo movimiento debe gestionarse a través del canal "INSTITUCIÓN" en el sistema SIAR.</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- DIAPOSITIVA 5: MAPA GENERAL DEL FLUJO MACRO -->
         <div class="slide-body">
-            <h3>04. Mapa del Flujo de Trabajo en Tienda</h3>
-            <p>El proceso consta de 4 etapas críticas consecutivas. El retraso o fallo en una de ellas detiene la solicitud completa:</p>
+            <h3>02. Mapa de Pasos: Generación de la Venta</h3>
+            <p>El flujo operativo se divide en 4 grandes etapas dependiendo de si la negociación se realiza de contado o mediante crédito corporativo:</p>
             
             <div class="timeline-container">
                 <div class="timeline-card">
                     <div class="timeline-circle">1</div>
-                    <h4>Identidad y Filtro</h4>
-                    <p>Validación del cliente y perfilamiento biométrico en sala.</p>
+                    <h4>Cotización</h4>
+                    <p>Entrega de precios formales por correo electrónico.</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-circle">2</div>
-                    <h4>Digitación Core</h4>
-                    <p>Ingreso de datos demográficos en el sistema Unicomer.</p>
+                    <h4>Orden de Compra</h4>
+                    <p>Emisión y validación del soporte de la Institución.</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-circle">3</div>
-                    <h4>Carga Digital</h4>
-                    <p>Indexación de documentos de soporte en formato PDF.</p>
+                    <h4>Análisis de Crédito</h4>
+                    <p>Evaluación de condiciones bajo anexos normativos.</p>
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-circle">4</div>
-                    <h4>Firma y Cierre</h4>
-                    <p>Formalización digital y despacho del producto.</p>
+                    <h4>Facturación</h4>
+                    <p>Emisión del comprobante y radicación de expedientes.</p>
                 </div>
             </div>
         </div>
 
-        <!-- DIAPOSITIVA 6: PASO 1 - DETALLE Y VALIDACIÓN BIOMÉTRICA -->
         <div class="slide-body">
-            <h3>05. Paso 1: Recepción, Filtro y Validación Biométrica</h3>
-            <p>La seguridad de la cartera inicia en el primer contacto. Debe mitigar riesgos de fraude de identidad de manera presencial.</p>
+            <h3>03. Paso 1 y 2: Gestión Documental de Apertura</h3>
+            <p>Ninguna venta puede ser procesada en el sistema SIAR si no se cuenta previamente con los respaldos impresos o digitales autorizados.</p>
             
             <div class="grid-2">
-                <div>
-                    <p><strong>Acciones Obligatorias del Asesor:</strong></p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li style="margin-bottom: 10px;">Solicite el documento de identidad original y vigente (No se aceptan fotocopias).</li>
-                        <li style="margin-bottom: 10px;">Inspeccione físicamente que la tarjeta de identidad no tenga enmendaduras, plásticos despegados o alteraciones.</li>
-                        <li style="margin-bottom: 10px;">Proceda a activar la cámara del punto de venta para la **validación biométrica facial** integrada en el sistema.</li>
+                <div class="pastel-box p-blue">
+                    <h4>📄 Entrega de Cotización</h4>
+                    <p><strong>¿Cómo se hace?</strong> Toda cotización debe ser enviada estrictamente por correo electrónico a la institución solicitante.</p>
+                    <p style="margin-top: 10px;"><strong>Formato Requerido:</strong> Se debe utilizar el documento normativo <em>SM.CA – PR12.FR05 – Cotización Institucional (Anexo 7)</em>.</p>
+                </div>
+                <div class="pastel-box p-yellow">
+                    <h4>🏢 Generación de Orden de Compra</h4>
+                    <p><strong>Responsabilidad del Cliente:</strong> La institución tiene que enviar su respectiva orden de compra basada en la cotización inicial, conteniendo todas las firmas autorizadas.</p>
+                    <p style="margin-top: 10px;"><strong>Plan de Contingencia:</strong> Si la empresa no posee un formato propio, se le debe entregar el formato estándar de la empresa <em>SM.CA – PR12.FR06 (Anexo 8)</em>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body">
+            <h3>04. Paso 3: Tipos de Carga en el Sistema SIAR</h3>
+            <p>Una vez aceptada la cotización y recibida la Orden de Compra, el Jefe de Tienda o Vendedor debe registrar el trámite seleccionando los parámetros exactos correspondientes:</p>
+            
+            <div class="grid-2">
+                <div class="pastel-box p-green">
+                    <h4>💰 Si es Pago de Contado</h4>
+                    <ul>
+                        <li>Generar la Solicitud de Compra directamente en el software SIAR.</li>
+                        <li><strong>Obligatorio:</strong> Seleccionar el canal de ventas <strong>INSTITUCIONES</strong>.</li>
+                        <li>Vincular explícitamente la institución a facturar y registrar el plazo comercial acordado.</li>
                     </ul>
                 </div>
-                <div class="pastel-box p-blue">
-                    <h4>🗣️ Script de Atención Estándar</h4>
-                    <p class="script-quote" style="margin: 10px 0; padding: 15px; font-size: 1.1rem;">
-                        "Bienvenido a Grupo Unicomer. Con gusto daremos de alta su solicitud para verificar sus beneficios y planes de financiamiento inmediato. ¿Me permite su identificación oficial para realizar el escaneo de seguridad?"
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- DIAPOSITIVA 7: PASO 2 - DIGITACIÓN Y ACTUALIZACIÓN CORE -->
-        <div class="slide-body">
-            <h3>06. Paso 2: Digitación en el Core de Crédito</h3>
-            <p>El ingreso erróneo de caracteres duplica los tiempos en mesa de control. El asesor debe ser meticuloso en este paso.</p>
-            
-            <div class="grid-3">
-                <div class="pastel-box p-yellow">
-                    <h4>📱 Datos de Comunicación</h4>
-                    <p>El número celular y el correo electrónico del cliente deben ser validados en vivo mediante el envío de un código SMS de verificación OTP.</p>
-                </div>
-                <div class="pastel-box p-blue">
-                    <h4>💼 Información Laboral</h4>
-                    <p>Digitar el nombre legal de la empresa, teléfonos fijos de contacto de recursos humanos y el salario neto real percibido por el solicitante.</p>
-                </div>
                 <div class="pastel-box p-purple">
-                    <h4>🏠 Georreferenciación</h4>
-                    <p>Ingresar la dirección exacta detallando calles principales, secundarias, color de casa y puntos de referencia cercanos.</p>
+                    <h4>💳 Si es Venta a Crédito</h4>
+                    <ul>
+                        <li>Generar simultáneamente la Solicitud de Compra y la Solicitudes de Crédito dentro de SIAR.</li>
+                        <li><strong>Casos Especiales (Convenio Tipo C):</strong> Para convenios tipo C, únicamente se digitaliza la cédula de identidad del cliente para la correspondiente revisión del Analista de Crédito.</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- DIAPOSITIVA 8: PASO 3 - ESTÁNDAR DE CARGA DOCUMENTAL -->
         <div class="slide-body">
-            <h3>07. Paso 3: Estándar y Calidad del Expediente Digital</h3>
-            <p>Los archivos corruptos, oscuros o cortados causan el rechazo automático del expediente. Aplique los siguientes estándares de carga:</p>
+            <h3>05. Paso 4: Criterios de Evaluación Crediticia</h3>
+            <p>La evaluación del riesgo comercial y la vigencia del acuerdo son filtros obligatorios antes de proceder a la facturación de los bienes.</p>
             
             <div class="grid-3">
-                <div class="pastel-box p-green">
-                    <h4>🪪 Documento de Identidad</h4>
-                    <p>Escaneado a color por ambos lados. Los bordes del documento deben ser visibles y la firma debe ser completamente legible.</p>
+                <div class="pastel-box p-orange">
+                    <h4>🔍 Criterio Normativo</h4>
+                    <p>Se tienen que evaluar minuciosamente las condiciones crediticias de acuerdo con los lineamientos establecidos en el documento de control <em>SM.CA – PR12.OA03 - Criterios de revisión (Anexo 9)</em>.</p>
                 </div>
                 <div class="pastel-box p-blue">
-                    <h4>💵 Comprobante de Ingreso</h4>
-                    <p>Roles de pago firmados del último mes o estados de cuenta bancarios nítidos (últimos 3 meses para independientes).</p>
+                    <h4>⏳ Temporalidad</h4>
+                    <p>Toda validación de crédito debe realizarse cuidando que se encuentre dentro del marco temporal de la vigencia del convenio institucional pactado.</p>
                 </div>
-                <div class="pastel-box p-orange">
-                    <h4>⚡ Planilla de Servicios</h4>
-                    <p>Documento completo de luz, agua o teléfono. El campo de la dirección debe coincidir con la información ingresada en el sistema.</p>
+                <div class="pastel-box p-yellow">
+                    <h4>👥 Responsables</h4>
+                    <p>Esta actividad de análisis técnico recae directamente sobre la posición del <strong>Analista de Crédito</strong> o el <strong>Jefe de Tienda</strong>, según la escala jerárquica.</p>
                 </div>
             </div>
         </div>
 
-        <!-- DIAPOSITIVA 9: MATRIZ DE DECISIONES DE RIESGO -->
         <div class="slide-body">
-            <h3>08. Matriz de Decisions del Motor de Crédito</h3>
-            <p>Al procesar la solicitud, el Motor de Reglas de Unicomer arrojará una respuesta inmediata basada en políticas de scoring:</p>
+            <h3>06. Armado de Expedientes: Persona Jurídica (Con Entrega)</h3>
+            <p>Si la factura se emite a nombre de la Institución (Persona Jurídica) y se realiza la entrega material de la mercadería, el expediente de crédito debe contener obligatoriamente:</p>
             
             <table>
                 <thead>
                     <tr>
-                        <th>Estado en Pantalla</th>
-                        <th>Nivel de Riesgo</th>
-                        <th>Acción Operativa Inmediata</th>
+                        <th>Requisito Documental</th>
+                        <th>Estado / Descripción del Soporte</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="badge bg-v">Verde - Aprobado</span></td>
-                        <td>Riesgo Bajo / Óptimo</td>
-                        <td>Proceder directamente a la emisión del contrato financiero y la orden de facturación.</td>
+                        <td><strong>Orden de Compra</strong></td>
+                        <td>Tiene que estar firmada de forma manuscrita por la persona autorizada por la empresa, o contar con el correo electrónico corporativo explícito que especifique la solicitud de compra.</td>
                     </tr>
                     <tr>
-                        <td><span class="badge bg-a">Amarillo - Condicionado</span></td>
-                        <td>Riesgo Moderado</td>
-                        <td>El sistema solicitará el ingreso de un co-deudor (garante) o el incremento del porcentaje de cuota inicial (prima).</td>
+                        <td><strong>Factura</strong></td>
+                        <td>Copia física o digital del comprobante de venta emitido por el sistema SIAR.</td>
                     </tr>
                     <tr>
-                        <td><span class="badge bg-r">Rojo - Rechazado</span></td>
-                        <td>Riesgo No Admisible</td>
-                        <td>Finalizar la atención amablemente. Ofrecer planes de compra mediante tarjetas de crédito aliadas o pago de contado.</td>
+                        <td><strong>Cédula del Representante</strong></td>
+                        <td>Copia legible del documento de identidad del Representante Legal vigente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contrato de Compraventa</strong></td>
+                        <td>Copia del instrumento legal debidamente firmado por ambas organizaciones.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RUC Institucional</strong></td>
+                        <td>Registro Único de Contribuyentes vigente impreso desde la plataforma del SRI.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- DIAPOSITIVA 10: PASO 4 - LEGALIZACIÓN Y FIRMA DIGITAL -->
         <div class="slide-body">
-            <h3>09. Paso 4: Firma del Contrato y Cierre Comercial</h3>
-            <p>Una vez aprobado el crédito, el proceso concluye con la formalización legal de los documentos valorados:</p>
+            <h3>07. Armado de Expedientes: Persona Jurídica (Sin Entrega)</h3>
+            <p>En modalidades donde la factura se emite a nombre de la institución pero no hay entrega inmediata de mercadería, el expediente cambia ligeramente y exige aprobaciones comerciales adicionales:</p>
+            
+            <div class="grid-3">
+                <div class="pastel-box p-blue">
+                    <h4>📋 Soportes Básicos</h4>
+                    <ul>
+                        <li>Orden de compra firmada por la persona autorizada corporativamente (o correo institucional de respaldo).</li>
+                        <li>Copia de la Factura de Venta institucional generada en SIAR.</li>
+                    </ul>
+                </div>
+                <div class="pastel-box p-green">
+                    <h4>🆔 Identidad Fiscal</h4>
+                    <ul>
+                        <li>Copia nítida de la cédula del Representante Legal de la empresa.</li>
+                        <li>Copia del Registro Único de Contribuyentes (RUC) de la Institución actualizado.</li>
+                    </ul>
+                </div>
+                <div class="pastel-box p-orange">
+                    <h4>🔑 Visto Bueno</h4>
+                    <ul>
+                        <li><strong>Correo de Aprobación Obligatorio:</strong> Se debe adjuntar obligatoriamente el correo electrónico con la autorización del Analista Comercial Supervisor o del Ejecutivo de Ventas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-body">
+            <h3>08. Expedientes Persona Natural y Reportes Directos</h3>
+            <p>Existen flujos alternos donde el cliente final es el colaborador directo de la empresa o cuando la venta se origina en la sucursal de manera directa:</p>
             
             <div class="grid-2">
                 <div class="pastel-box p-purple">
-                    <h4>✍️ Firma Digital y Biométrica</h4>
-                    <p>Se despliega el pagaré y el contrato de crédito en la tableta electrónica. El cliente debe estampar su firma física idéntica a la de su documento oficial.</p>
-                </div>
-                <div class="pastel-box p-green">
-                    <h4>📣 Explicación de Condiciones</h4>
-                    <p>Es una obligación de servicio repetirle verbalmente al cliente el valor de su cuota mensual fija, el día de pago del mes y recordarle las marcas aliadas del grupo y la app **EMMA** para la autogestión de sus saldos.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- DIAPOSITIVA 11: TRAZABILIDAD Y CONTROL DE AUDITORÍA -->
-        <div class="slide-body">
-            <h3>10. Huella Digital y Control de Trazabilidad</h3>
-            <p>Toda acción efectuada por el asesor dentro del software deja una huella digital inalterable con marcas de tiempo (Timestamps):</p>
-            
-            <div class="grid-3">
-                <div class="pastel-box p-blue">
-                    <h4>🕒 Registro Inicial</h4>
-                    <p>Marca la hora exacta en que el asesor digita la cédula del cliente. Inicia el conteo oficial de los 20 minutos de SLA.</p>
+                    <h4>👤 Flujo para Persona Natural</h4>
+                    <p>Cuando la venta institucional se realiza bajo convenios donde la facturación es a nombre del colaborador individual (Persona Natural), se tiene que estructurar y adjuntar toda la documentación siguiendo estrictamente los lineamientos fijados en el procedimiento maestro <strong>CR.NE – PR.01 – Custodia de Expedientes</strong>.</p>
                 </div>
                 <div class="pastel-box p-yellow">
-                    <h4>🕒 Tiempo de Scoring</h4>
-                    <p>Mide los minutos que toma el motor de riesgos en emitir su veredicto (Meta estándar interna: menos de 3 minutos).</p>
-                </div>
-                <div class="pastel-box p-orange">
-                    <h4>🕒 Cierre y Activación</h4>
-                    <p>Registra la generación de la factura y activación de la cuenta corriente de crédito del cliente.</p>
+                    <h4>🏬 Gestión Directa desde Tiendas</h4>
+                    <p>En el caso excepcional de que una Institución gestione la compra de manera directa acudiendo a una sucursal física, el <strong>Jefe de Tienda</strong> tiene la obligación estricta de reportar inmediatamente los detalles de la transacción al Ejecutivo de Ventas Institucionales.</p>
+                    <p style="margin-top: 10px;"><strong>¿Por qué se hace?</strong> Esta comunicación es vital para alimentar de forma correcta el sistema y generar la planilla de cobros mensual corporativa sin omisiones.</p>
                 </div>
             </div>
         </div>
 
-        <!-- DIAPOSITIVA 12: MEJORA CONTINUA Y EVALUACIÓN -->
-        <div class="slide-body">
-            <h3>11. Mejora Continua y Actualizaciones</h3>
-            <p>Este instructivo SMART constituye un documento de carácter vivo dentro del Sistema de Gestión de Calidad de Grupo Unicomer.</p>
-            <p>Cualquier modificación futura en los siguientes parámetros exigirá la actualización inmediata de estas diapositivas interactivas:</p>
-            
-            <div class="grid-3">
-                <div class="pastel-box p-blue">
-                    <h4>⚖️ Ajustes Legales</h4>
-                    <p>Cambios en las normativas y leyes financieras de regulación de crédito al consumidor locales.</p>
-                </div>
-                <div class="pastel-box p-purple">
-                    <h4>🛠️ Actualización de Software</h4>
-                    <p>Lanzamientos de nuevas versiones del sistema Core o la plataforma móvil fintech de la empresa.</p>
-                </div>
-                <div class="pastel-box p-green">
-                    <h4>📈 Objetivos de Cartera</h4>
-                    <p>Reajuste de las políticas internas de flexibilización o restricción de riesgo crediticio semestral.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pie de Página Fijo -->
         <footer class="slide-footer">
             <div class="footer-logo">
-                <!-- Se enlaza la imagen del repositorio local de forma directa -->
-                <img src="image_989069.png" alt="Logo Grupo Unicomer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA0CAYAAABv6g7uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFm0lEQVR4nO2bXWwUVRTHf+fObrf9oAVpS7FaoS0vBAtpC60iYgMv9EkeMAHjg/EBiVEeDInRRE3wQfSBiVETo8bEgMREH4wPxhh8MD60+GgU/IptU9pWWgottN3tdmfu+TDTLrS7u9u2O9uF/SfZzM7cc8/c39w799wzC4YMGZIoAbe8w4YME20mDCEmDCEmDCEmDCEmDCEmDCEmDCEmDCEmDCFfC1wFCoBqH+vT9LHiSghbK7U3vI6Z7qas6T70dDdqXQeGvI6e7katPZgZpYVd9IAnrQ88mE6B6Whid9wY+g/M9HVMXw9Geh7T78PoPYKqN9Ez67F6v8XpG4O7E6wZfE9gZscxs2PoPUfG6BwE/w7b09pEet6g0nOEnllLpacTvbczfUfA9AnM9BRWeizb630gUuofgGkfM3MKMzOH6fVgtZ0AnfUf+ZfT04XpO0Klvxu9pwu9t3N6N4A1WJnVWL0vYfZ9N2vI3A7w92GlVwFw+id9/v2YvhfQ0wXo6fHpn9mK6T86Z2D/2fT0YKVXAdg9Y6T3Y2bXUulpxex7b9pCqgW9FwO9D6P/S3p6E0b6dfTew+jpCaz++9F7T2D1pTH70lh9L5Pe2/I6ehw9fRgrvRZ94MvpwfS9PMPb+vVf+NfN6b09vbdPez9mZhUzM8gM4N+G1X8/Vv8DzAD+vTMDmE3T3/tXgG8YvbeB6Y2l996eXg+m7w9p9Y6S7hml9LpZid77wB8XUrX6bmb6gS303gnB/E6mNzz9M73B9E+6Z2D6eHofon+q/wT4ptPTU3r98g+z6wX238DM6pWemDNUesbQew9ipA/NDMwaoMvbeu/X3XFjXqf8M769F8wY6O1gdnfM+vZeMLtz6Y1Xeq7Z0Hstpn8WvR76p/KvZ7S+0OulZ2T6g96fSu8Zunv6p8p6wN9p9B0Yf6fS6z7909t9wS0hEorvN0pMGEJMGEJMGEJMGEJMGEJMGEJMGGKiLWT32R6gC8uY+Y9hFp/ZgYUpbAczv4vNzN7W+9i+R5n6j9u7G1v947aO77G93bZ+6HVs79gOZo60G9mN7Z3Y3onm7uC596P2o2Z28Nx79b7YfC59A7e+F83twfPvxXOfY+bXvSfeW5Z0U7qPbe3A9k68N+F3Y3snp/bO9p5Y5G195K/e1v9Y3u4V7vXyXm/vRHP36v6pWffMeeX9S+W9Z7gXs7fO5tCdt29bX16vFffMeS37mFfWe7X9eU6P/UvnvY7l3WbE9872ntg8q9N7HcvuY16n++3R++36UfshZ916Z6/228P2Z3YfczqWfcy75R8bMky0YAgxYQgxgZgwC6E6bYmZscRcZt6g/GOmhYp9bE0H23fAtv8x+3gT+8R7w2vNntbybNsn9nls++jbyK6T3m979bB7ZPtD9vHeB9Z7t/zYh18WzPzY90S8f773jB3m7eUfM6/jZq/s32eN6T6Zp/V+9R+996P2w3rP9946M3vY3lre6xXv5Z1n3Xp2pnvN3izedf6vM69j7I3Nen5G9Z6X3Xm3v5XlvfR9Zfe8O9f4e2VvI++G3BftN9p/vPWP75b0P/HeK9yNfC95Z/vW8N++8V/s399bZaY3pPuE3S99EfozN9D7lZg2ZeX7uN8vMvL6GzDwn8/Z6mXN6vffWeS3Xp/Pae3atp77IOfbeuPSe9v6Y97T3xL2n3L9Y3sfsr/f6z3m3bJ99t7HPrHPP6lj2Mfdf7D6vY8MvC27vY6L/R8YvA4YQE4YQE4YQE4YQE4YQE4YQE4YQE4YQE4YQE4YQE4YQE4YQE4b4R0MscqPEnU0YQkwYQkwYQkwYQkwYQkwYQkwYQkwYQkwY8g9H6D+9EIs1+vDLIgAAAABJRU5ErkJggg==" alt="Logo Grupo Unicomer">
             </div>
             <div class="footer-controls">
                 <button class="nav-btn" id="prevBtn" disabled>Anterior</button>
-                <div class="slide-counter" id="slideNum">Diapositiva 1 de 12</div>
+                <div class="slide-counter" id="slideNum">Diapositiva 1 de 9</div>
                 <button class="nav-btn" id="nextBtn">Siguiente</button>
             </div>
         </footer>
     </div>
 
-    <!-- Script Controlador de Diapositivas -->
     <script>
         const slides = document.querySelectorAll('.slide-body');
         const prevBtn = document.getElementById('prevBtn');
